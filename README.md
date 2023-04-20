@@ -1,15 +1,15 @@
-# `Plugin Name`
+# LinkRelations
 
 #### _Plugin for [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software")_
 
-`Brief intro`
+Use internal and external links to their full potential. This plugin uses a graph library (included) to show relationships created between tasks.
 
 
 Features
 -------------
 
-- `main features list`
-- `main features list`
+- Add Nextcloud support for external links
+- Show links between tasks in a graph (imported feature from [Relationgraph (fork)](https://github.com/TimoStahl/kanboard_plugin_relationgraph))
 
 
 Screenshots
@@ -82,7 +82,9 @@ Translations
 Authors & Contributors
 ----------------------
 
-- [@](https://github.com/url) - Author
+- [@aljawaid](https://github.com/aljawaid) - Author
+- [TimoStahl](https://github.com/TimoStahl/kanboard_plugin_relationgraph) - Fork Author (Imported feature)
+- [Xavier Vidal](https://github.com/xavividal/kanboard-plugin-relationgraph) - Author of Relationgraph (Imported feature)
 - _Contributors welcome_
 
 
