@@ -9,7 +9,7 @@ Features
 -------------
 
 - Add Nextcloud support for external links
-- Show links between tasks in a graph (imported feature from [Relationgraph (fork)](https://github.com/TimoStahl/kanboard_plugin_relationgraph))
+- Show links between tasks in a graph (imported feature from [Relationgraph](https://github.com/TimoStahl/kanboard_plugin_relationgraph) _(fork)_
   - This plugin uses [vis.js](https://github.com/almende/vis "A dynamic, browser-based visualization library") (included) to display the graph
 
 Screenshots
@@ -83,7 +83,7 @@ Authors & Contributors
 ----------------------
 
 - [@aljawaid](https://github.com/aljawaid) - Author
-- [TimoStahl](https://github.com/TimoStahl/kanboard_plugin_relationgraph) - Relationgraph (Fork) Author (Imported feature)
+- [TimoStahl](https://github.com/TimoStahl/kanboard_plugin_relationgraph) - Relationgraph _(Fork)_ Author (Imported feature)
 - _Contributors welcome_
 
 
