@@ -1,16 +1,34 @@
 <h1 name="readme-top">LinkRelations</h1>
 <p align="center">
-    <img src="https://img.shields.io/github/v/release/aljawaid/LinkRelations?style=for-the-badge&color=brightgreen" alt="GitHub Latest Release (by date)" title="GitHub Latest Release (by date)">
-    <img src="https://img.shields.io/github/downloads/aljawaid/LinkRelations/total?style=for-the-badge&color=orange" alt="GitHub All Releases" title="GitHub All Downloads">
-    <img src="https://img.shields.io/github/directory-file-count/aljawaid/LinkRelations?style=for-the-badge&color=orange" alt="GitHub Repository File Count" title="GitHub Repository File Count">
-    <img src="https://img.shields.io/github/repo-size/aljawaid/LinkRelations?style=for-the-badge&color=orange" alt="GitHub Repository Size" title="GitHub Repository Size">
-    <img src="https://img.shields.io/github/languages/code-size/aljawaid/LinkRelations?style=for-the-badge&color=orange" alt="GitHub Code Size" title="GitHub Code Size">
+    <a href="https://github.com/aljawaid/LinkRelations/releases">
+        <img src="https://img.shields.io/github/v/release/aljawaid/LinkRelations?style=for-the-badge&color=brightgreen" alt="GitHub Latest Release (by date)" title="GitHub Latest Release (by date)">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/releases">
+        <img src="https://img.shields.io/github/downloads/aljawaid/LinkRelations/total?style=for-the-badge&color=orange" alt="GitHub All Releases" title="GitHub All Downloads">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/releases">
+        <img src="https://img.shields.io/github/directory-file-count/aljawaid/LinkRelations?style=for-the-badge&color=orange" alt="GitHub Repository File Count" title="GitHub Repository File Count">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/releases">
+        <img src="https://img.shields.io/github/repo-size/aljawaid/LinkRelations?style=for-the-badge&color=orange" alt="GitHub Repository Size" title="GitHub Repository Size">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/releases">
+        <img src="https://img.shields.io/github/languages/code-size/aljawaid/LinkRelations?style=for-the-badge&color=orange" alt="GitHub Code Size" title="GitHub Code Size">
+    </a>
 </p>
 <p align="center">
-    <img src="https://img.shields.io/github/discussions/aljawaid/LinkRelations?style=for-the-badge&color=blue" alt="GitHub Discussions" title="GitHub Discussions">
-    <img src="https://img.shields.io/github/commits-since/aljawaid/LinkRelations/latest?include_prereleases&style=for-the-badge&color=blue" alt="GitHub Commits Since Last Release" title="GitHub Commits Since Last Release">
-    <img src="https://img.shields.io/github/commit-activity/m/aljawaid/LinkRelations?style=for-the-badge&color=blue" alt="GitHub Commit Monthly Activity" title="GitHub Commit Monthly Activity">
-    <a href="https://github.com/kanboard/kanboard" title="Kanboard - Kanban Project Management Software"><img src="https://img.shields.io/badge/Plugin%20for-kanboard-D40000?style=for-the-badge" alt="Kanboard"></a>
+    <a href="https://github.com/aljawaid/LinkRelations/discussions">
+        <img src="https://img.shields.io/github/discussions/aljawaid/LinkRelations?style=for-the-badge&color=blue" alt="GitHub Discussions" title="Read Discussions">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/compare">
+        <img src="https://img.shields.io/github/commits-since/aljawaid/LinkRelations/latest?include_prereleases&style=for-the-badge&color=blue" alt="GitHub Commits Since Last Release" title="GitHub Commits Since Last Release">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/compare">
+        <img src="https://img.shields.io/github/commit-activity/m/aljawaid/LinkRelations?style=for-the-badge&color=blue" alt="GitHub Commit Monthly Activity" title="GitHub Commit Monthly Activity">
+    </a>
+    <a href="https://github.com/kanboard/kanboard" title="Kanboard - Kanban Project Management Software">
+        <img src="https://img.shields.io/badge/Plugin%20for-kanboard-D40000?style=for-the-badge&labelColor=000000" alt="Kanboard">
+    </a>
 </p>
 
 Use internal and external links to their full potential. This plugin uses a graph library (included) to show relationships created between tasks. Detect Nextcloud installations automatically when adding external links.
@@ -80,5 +98,30 @@ Go to `Settings` &#10562;
 
 - This project is distributed under the [MIT License](../master/LICENSE "Read The MIT license")
 
+---
+
+<h3 align="center">
+    <a href="https://github.com/aljawaid/LinkRelations/stargazers" title="View Stargazers">
+        <img src="https://img.shields.io/github/stars/aljawaid/LinkRelations?logo=github&style=flat-square" alt="LinkRelations">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/forks" title="See Forks">
+        <img src="https://img.shields.io/github/forks/aljawaid/LinkRelations?logo=github&style=flat-square" alt="LinkRelations">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/blob/master/LICENSE" title="Read License">
+        <img src="https://img.shields.io/github/license/aljawaid/LinkRelations?style=flat-square" alt="LinkRelations">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/issues" title="Open Issues">
+        <img src="https://img.shields.io/github/issues-raw/aljawaid/LinkRelations?style=flat-square" alt="LinkRelations">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/issues?q=is%3Aissue+is%3Aclosed" title="Closed Issues">
+        <img src="https://img.shields.io/github/issues-closed/aljawaid/LinkRelations?style=flat-square" alt="LinkRelations">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/discussions" title="Read Discussions">
+        <img src="https://img.shields.io/github/discussions/aljawaid/LinkRelations?style=flat-square" alt="LinkRelations">
+    </a>
+    <a href="https://github.com/aljawaid/LinkRelations/compare/" title="Latest Commits">
+        <img alt="GitHub commits since latest release (by date)" src="https://img.shields.io/github/commits-since/aljawaid/LinkRelations/latest?style=flat-square">
+    </a>
+</h3>
 <a name="readme-bottom"></a>
 <p align="right">[<a href="#readme-top">&#8593; Top</a>]</p>
