@@ -58,9 +58,9 @@ div.vis-configuration.vis-config-button {
 }
 
 div.vis-configuration.vis-config-button.hover {
-    background-color: #4588e6;
+    background-color: #4588E6;
     border: 2px solid #214373;
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 div.vis-configuration.vis-config-item {
@@ -74,21 +74,21 @@ div.vis-configuration.vis-config-item {
 
 div.vis-configuration.vis-config-item.vis-config-s2 {
     left: 10px;
-    background-color: #f7f8fa;
+    background-color: #F7F8FA;
     padding-left: 5px;
     border-radius: 3px;
 }
 
 div.vis-configuration.vis-config-item.vis-config-s3 {
     left: 20px;
-    background-color: #e4e9f0;
+    background-color: #E4E9F0;
     padding-left: 5px;
     border-radius: 3px;
 }
 
 div.vis-configuration.vis-config-item.vis-config-s4 {
     left: 30px;
-    background-color: #cfd8e6;
+    background-color: #CFD8E6;
     padding-left: 5px;
     border-radius: 3px;
 }
@@ -118,8 +118,8 @@ div.vis-configuration.vis-config-colorBlock {
     height: 19px;
     border: 1px solid #444444;
     border-radius: 2px;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     cursor: pointer;
 }
 
@@ -141,7 +141,7 @@ input.vis-configuration.vis-config-range {
     /*removes default webkit styles*/
     -webkit-appearance: none;
     /*fix for FF unable to apply focus style bug */
-    border: 0px solid white;
+    border: 0 solid white;
     background-color: rgba(0, 0, 0, 0);
     /*required for proper track sizing in FF*/
     width: 300px;
@@ -151,62 +151,62 @@ input.vis-configuration.vis-config-range {
 input.vis-configuration.vis-config-range::-webkit-slider-runnable-track {
     width: 300px;
     height: 5px;
-    background: #dedede;
+    background: #DEDEDE;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #dedede 0%, #c8c8c8 99%);
+    background: -moz-linear-gradient(top, #DEDEDE 0%, #C8C8C8 99%);
     /* FF3.6+ */
     background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0%, #dedede),
-        color-stop(99%, #c8c8c8)
+        color-stop(0%, #DEDEDE),
+        color-stop(99%, #C8C8C8)
     );
     /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #dedede 0%, #c8c8c8 99%);
+    background: -webkit-linear-gradient(top, #DEDEDE 0%, #C8C8C8 99%);
     /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #dedede 0%, #c8c8c8 99%);
+    background: -o-linear-gradient(top, #DEDEDE 0%, #C8C8C8 99%);
     /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #dedede 0%, #c8c8c8 99%);
+    background: -ms-linear-gradient(top, #DEDEDE 0%, #C8C8C8 99%);
     /* IE10+ */
-    background: linear-gradient(to bottom, #dedede 0%, #c8c8c8 99%);
+    background: linear-gradient(to bottom, #DEDEDE 0%, #C8C8C8 99%);
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#c8c8c8',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DEDEDE', endColorstr='#C8C8C8',GradientType=0 );
     /* IE6-9 */
     border: 1px solid #999999;
-    box-shadow: #aaaaaa 0px 0px 3px 0px;
+    box-shadow: #AAAAAA 0 0 3px 0;
     border-radius: 3px;
 }
 
 input.vis-configuration.vis-config-range::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: 1px solid #14334b;
+    border: 1px solid #14334B;
     height: 17px;
     width: 17px;
     border-radius: 50%;
-    background: #3876c2;
+    background: #3876C2;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #3876c2 0%, #385380 100%);
+    background: -moz-linear-gradient(top, #3876C2 0%, #385380 100%);
     /* FF3.6+ */
     background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0%, #3876c2),
+        color-stop(0%, #3876C2),
         color-stop(100%, #385380)
     );
     /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #3876c2 0%, #385380 100%);
+    background: -webkit-linear-gradient(top, #3876C2 0%, #385380 100%);
     /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #3876c2 0%, #385380 100%);
+    background: -o-linear-gradient(top, #3876C2 0%, #385380 100%);
     /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #3876c2 0%, #385380 100%);
+    background: -ms-linear-gradient(top, #3876C2 0%, #385380 100%);
     /* IE10+ */
-    background: linear-gradient(to bottom, #3876c2 0%, #385380 100%);
+    background: linear-gradient(to bottom, #3876C2 0%, #385380 100%);
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3876c2', endColorstr='#385380',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3876C2', endColorstr='#385380',GradientType=0 );
     /* IE6-9 */
-    box-shadow: #111927 0px 0px 1px 0px;
+    box-shadow: #111927 0 0 1px 0;
     margin-top: -7px;
 }
 
@@ -215,57 +215,57 @@ input.vis-configuration.vis-config-range:focus {
 }
 
 input.vis-configuration.vis-config-range:focus::-webkit-slider-runnable-track {
-    background: #9d9d9d;
+    background: #9D9D9D;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #9d9d9d 0%, #c8c8c8 99%);
+    background: -moz-linear-gradient(top, #9D9D9D 0%, #C8C8C8 99%);
     /* FF3.6+ */
     background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0%, #9d9d9d),
-        color-stop(99%, #c8c8c8)
+        color-stop(0%, #9D9D9D),
+        color-stop(99%, #C8C8C8)
     );
     /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #9d9d9d 0%, #c8c8c8 99%);
+    background: -webkit-linear-gradient(top, #9D9D9D 0%, #C8C8C8 99%);
     /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #9d9d9d 0%, #c8c8c8 99%);
+    background: -o-linear-gradient(top, #9D9D9D 0%, #C8C8C8 99%);
     /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #9d9d9d 0%, #c8c8c8 99%);
+    background: -ms-linear-gradient(top, #9D9D9D 0%, #C8C8C8 99%);
     /* IE10+ */
-    background: linear-gradient(to bottom, #9d9d9d 0%, #c8c8c8 99%);
+    background: linear-gradient(to bottom, #9D9D9D 0%, #C8C8C8 99%);
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9d9d9d', endColorstr='#c8c8c8',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9D9D9D', endColorstr='#C8C8C8',GradientType=0 );
     /* IE6-9 */
 }
 
 input.vis-configuration.vis-config-range::-moz-range-track {
     width: 300px;
     height: 10px;
-    background: #dedede;
+    background: #DEDEDE;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #dedede 0%, #c8c8c8 99%);
+    background: -moz-linear-gradient(top, #DEDEDE 0%, #C8C8C8 99%);
     /* FF3.6+ */
     background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0%, #dedede),
-        color-stop(99%, #c8c8c8)
+        color-stop(0%, #DEDEDE),
+        color-stop(99%, #C8C8C8)
     );
     /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #dedede 0%, #c8c8c8 99%);
+    background: -webkit-linear-gradient(top, #DEDEDE 0%, #C8C8C8 99%);
     /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #dedede 0%, #c8c8c8 99%);
+    background: -o-linear-gradient(top, #DEDEDE 0%, #C8C8C8 99%);
     /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #dedede 0%, #c8c8c8 99%);
+    background: -ms-linear-gradient(top, #DEDEDE 0%, #C8C8C8 99%);
     /* IE10+ */
-    background: linear-gradient(to bottom, #dedede 0%, #c8c8c8 99%);
+    background: linear-gradient(to bottom, #DEDEDE 0%, #C8C8C8 99%);
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#c8c8c8',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DEDEDE', endColorstr='#C8C8C8',GradientType=0 );
     /* IE6-9 */
     border: 1px solid #999999;
-    box-shadow: #aaaaaa 0px 0px 3px 0px;
+    box-shadow: #AAAAAA 0 0 3px 0;
     border-radius: 3px;
 }
 
@@ -296,12 +296,12 @@ input.vis-configuration.vis-config-range::-ms-track {
 }
 
 input.vis-configuration.vis-config-range::-ms-fill-lower {
-    background: #777;
+    background: #777777;
     border-radius: 10px;
 }
 
 input.vis-configuration.vis-config-range::-ms-fill-upper {
-    background: #ddd;
+    background: #DDDDDD;
     border-radius: 10px;
 }
 
@@ -314,27 +314,27 @@ input.vis-configuration.vis-config-range::-ms-thumb {
 }
 
 input.vis-configuration.vis-config-range:focus::-ms-fill-lower {
-    background: #888;
+    background: #888888;
 }
 
 input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
-    background: #ccc;
+    background: #CCCCCC;
 }
 
 .vis-configuration-popup {
     position: absolute;
-    background: rgba(57, 76, 89, 0.85);
-    border: 2px solid #f2faff;
+    background: rgba(57, 76, 89, .85);
+    border: 2px solid #F2FAFF;
     line-height: 30px;
     height: 30px;
     width: 150px;
     text-align: center;
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 14px;
     border-radius: 4px;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    -moz-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
 }
 
 .vis-configuration-popup::after, .vis-configuration-popup::before {
@@ -350,21 +350,21 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 
 .vis-configuration-popup::after {
     border-color: rgba(136, 183, 213, 0);
-    border-left-color: rgba(57, 76, 89, 0.85);
+    border-left-color: rgba(57, 76, 89, .85);
     border-width: 8px;
     margin-top: -8px;
 }
 
 .vis-configuration-popup::before {
     border-color: rgba(194, 225, 245, 0);
-    border-left-color: #f2faff;
+    border-left-color: #F2FAFF;
     border-width: 12px;
     margin-top: -12px;
 }
 
 .vis-timeline {
     position: relative;
-    border: 1px solid #bfbfbf;
+    border: 1px solid #BFBFBF;
     overflow: hidden;
     padding: 0;
     margin: 0;
@@ -379,7 +379,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 }
 
 .vis-panel.vis-center, .vis-panel.vis-left, .vis-panel.vis-right, .vis-panel.vis-top, .vis-panel.vis-bottom {
-    border: 1px #bfbfbf;
+    border: 1px #BFBFBF;
 }
 
 .vis-panel.vis-center, .vis-panel.vis-left, .vis-panel.vis-right {
@@ -405,7 +405,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
     position: absolute;
     width: 100%;
     height: 1px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .8);
     /* TODO: find a nice way to ensure vis-shadows are drawn on top of items z-index: 1;
      */
 }
@@ -431,12 +431,12 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
     left: 0;
     top: 0;
     width: 100%;
-    color: #4d4d4d;
+    color: #4D4D4D;
     box-sizing: border-box;
 }
 
 .vis-labelset .vis-label {
-    border-bottom: 1px solid #bfbfbf;
+    border-bottom: 1px solid #BFBFBF;
 }
 
 .vis-labelset .vis-label.draggable {
@@ -481,7 +481,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 .vis-foreground .vis-group {
     position: relative;
     box-sizing: border-box;
-    border-bottom: 1px solid #bfbfbf;
+    border-bottom: 1px solid #BFBFBF;
 }
 
 .vis-foreground .vis-group:last-child {
@@ -498,19 +498,18 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 }
 
 .vis-item {
+    /* overflow: hidden; */
     position: absolute;
-    color: #1a1a1a;
-    border-color: #97b0f8;
+    color: #1A1A1A;
+    border-color: #97B0F8;
     border-width: 1px;
-    background-color: #d5ddf6;
+    background-color: #D5DDF6;
     display: inline-block;
-    /*overflow: hidden;
-    */
 }
 
 .vis-item.vis-selected {
-    border-color: #ffc200;
-    background-color: #fff785;
+    border-color: #FFC200;
+    background-color: #FFF785;
     /* z-index must be higher than the z-index of custom time bar and current time bar */
     z-index: 2;
 }
@@ -520,7 +519,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 }
 
 .vis-item.vis-point.vis-selected {
-    background-color: #fff785;
+    background-color: #FFF785;
 }
 
 .vis-item.vis-box {
@@ -549,7 +548,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 
 .vis-item.vis-background {
     border: none;
-    background-color: rgba(213, 221, 246, 0.4);
+    background-color: rgba(213, 221, 246, .4);
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -641,7 +640,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 
 .vis-time-axis .vis-text {
     position: absolute;
-    color: #4d4d4d;
+    color: #4D4D4D;
     padding: 3px;
     overflow: hidden;
     box-sizing: border-box;
@@ -663,21 +662,21 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 }
 
 .vis-time-axis .vis-grid.vis-minor {
-    border-color: #e5e5e5;
+    border-color: #E5E5E5;
 }
 
 .vis-time-axis .vis-grid.vis-major {
-    border-color: #bfbfbf;
+    border-color: #BFBFBF;
 }
 
 .vis-current-time {
-    background-color: #ff7f6e;
+    background-color: #FF7F6E;
     width: 2px;
     z-index: 1;
 }
 
 .vis-custom-time {
-    background-color: #6e94ff;
+    background-color: #6E94FF;
     width: 2px;
     cursor: move;
     z-index: 1;
@@ -719,17 +718,17 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 }
 
 .vis-panel.vis-background.vis-horizontal .vis-grid.vis-minor {
-    border-color: #e5e5e5;
+    border-color: #E5E5E5;
 }
 
 .vis-panel.vis-background.vis-horizontal .vis-grid.vis-major {
-    border-color: #bfbfbf;
+    border-color: #BFBFBF;
 }
 
 .vis-data-axis .vis-y-axis.vis-major {
     width: 100%;
     position: absolute;
-    color: #4d4d4d;
+    color: #4D4D4D;
     white-space: nowrap;
 }
 
@@ -744,7 +743,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 .vis-data-axis .vis-y-axis.vis-minor {
     position: absolute;
     width: 100%;
-    color: #bebebe;
+    color: #BEBEBE;
     white-space: nowrap;
 }
 
@@ -758,7 +757,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 
 .vis-data-axis .vis-y-axis.vis-title {
     position: absolute;
-    color: #4d4d4d;
+    color: #4D4D4D;
     white-space: nowrap;
     bottom: 20px;
     text-align: center;
@@ -800,59 +799,58 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 }
 
 .vis-legend {
-    background-color: rgba(247, 252, 255, 0.65);
+    background-color: rgba(247, 252, 255, .65);
     padding: 5px;
-    border: 1px solid #b3b3b3;
-    box-shadow: 2px 2px 10px rgba(154, 154, 154, 0.55);
+    border: 1px solid #B3B3B3;
+    box-shadow: 2px 2px 10px rgba(154, 154, 154, .55);
 }
 
 .vis-legend-text {
-    /*font-size: 10px;
-    */
+    /* font-size: 10px; */
     white-space: nowrap;
     display: inline-block;
 }
 
 .vis-graph-group0 {
-    fill: #4f81bd;
+    fill: #4F81BD;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #4f81bd;
+    stroke: #4F81BD;
 }
 
 .vis-graph-group1 {
-    fill: #f79646;
+    fill: #F79646;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #f79646;
+    stroke: #F79646;
 }
 
 .vis-graph-group2 {
-    fill: #8c51cf;
+    fill: #8C51CF;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #8c51cf;
+    stroke: #8C51CF;
 }
 
 .vis-graph-group3 {
-    fill: #75c841;
+    fill: #75C841;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #75c841;
+    stroke: #75C841;
 }
 
 .vis-graph-group4 {
-    fill: #ff0100;
+    fill: #FF0100;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #ff0100;
+    stroke: #FF0100;
 }
 
 .vis-graph-group5 {
-    fill: #37d8e6;
+    fill: #37D8E6;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #37d8e6;
+    stroke: #37D8E6;
 }
 
 .vis-graph-group6 {
@@ -863,33 +861,33 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 }
 
 .vis-graph-group7 {
-    fill: #00ff26;
+    fill: #00FF26;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #00ff26;
+    stroke: #00FF26;
 }
 
 .vis-graph-group8 {
-    fill: #ff00ff;
+    fill: #FF00FF;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #ff00ff;
+    stroke: #FF00FF;
 }
 
 .vis-graph-group9 {
-    fill: #8f3938;
+    fill: #8F3938;
     fill-opacity: 0;
     stroke-width: 2px;
-    stroke: #8f3938;
+    stroke: #8F3938;
 }
 
 .vis-timeline .vis-fill {
-    fill-opacity: 0.1;
+    fill-opacity: .1;
     stroke: none;
 }
 
 .vis-timeline .vis-bar {
-    fill-opacity: 0.5;
+    fill-opacity: .5;
     stroke-width: 1px;
 }
 
@@ -900,20 +898,20 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
 
 .vis-timeline .vis-legend-background {
     stroke-width: 1px;
-    fill-opacity: 0.9;
-    fill: #ffffff;
-    stroke: #c2c2c2;
+    fill-opacity: .9;
+    fill: #FFFFFF;
+    stroke: #C2C2C2;
 }
 
 .vis-timeline .vis-outline {
     stroke-width: 1px;
     fill-opacity: 1;
-    fill: #ffffff;
-    stroke: #e5e5e5;
+    fill: #FFFFFF;
+    stroke: #E5E5E5;
 }
 
 .vis-timeline .vis-icon-fill {
-    fill-opacity: 0.3;
+    fill-opacity: .3;
     stroke: none;
 }
 
@@ -921,60 +919,60 @@ div.vis-network div.vis-manipulation {
     border-width: 0;
     border-bottom: 1px;
     border-style: solid;
-    border-color: #d6d9d8;
-    background: #ffffff;
+    border-color: #D6D9D8;
+    background: #FFFFFF;
     /* Old browsers */
     background: -moz-linear-gradient(
         top,
-        #ffffff 0%,
-        #fcfcfc 48%,
-        #fafafa 50%,
-        #fcfcfc 100%
+        #FFFFFF 0%,
+        #FCFCFC 48%,
+        #FAFAFA 50%,
+        #FCFCFC 100%
     );
     /* FF3.6+ */
     background: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0%, #ffffff),
-        color-stop(48%, #fcfcfc),
-        color-stop(50%, #fafafa),
-        color-stop(100%, #fcfcfc)
+        color-stop(0%, #FFFFFF),
+        color-stop(48%, #FCFCFC),
+        color-stop(50%, #FAFAFA),
+        color-stop(100%, #FCFCFC)
     );
     /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(
         top,
-        #ffffff 0%,
-        #fcfcfc 48%,
-        #fafafa 50%,
-        #fcfcfc 100%
+        #FFFFFF 0%,
+        #FCFCFC 48%,
+        #FAFAFA 50%,
+        #FCFCFC 100%
     );
     /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(
         top,
-        #ffffff 0%,
-        #fcfcfc 48%,
-        #fafafa 50%,
-        #fcfcfc 100%
+        #FFFFFF 0%,
+        #FCFCFC 48%,
+        #FAFAFA 50%,
+        #FCFCFC 100%
     );
     /* Opera 11.10+ */
     background: -ms-linear-gradient(
         top,
-        #ffffff 0%,
-        #fcfcfc 48%,
-        #fafafa 50%,
-        #fcfcfc 100%
+        #FFFFFF 0%,
+        #FCFCFC 48%,
+        #FAFAFA 50%,
+        #FCFCFC 100%
     );
     /* IE10+ */
     background: linear-gradient(
         to bottom,
-        #ffffff 0%,
-        #fcfcfc 48%,
-        #fafafa 50%,
-        #fcfcfc 100%
+        #FFFFFF 0%,
+        #FCFCFC 48%,
+        #FAFAFA 50%,
+        #FCFCFC 100%
     );
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fcfcfc',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FCFCFC',GradientType=0 );
     /* IE6-9 */
     position: absolute;
     left: 0;
@@ -1010,7 +1008,7 @@ div.vis-network div.vis-close {
 }
 
 div.vis-network div.vis-close:hover {
-    opacity: 0.6;
+    opacity: .6;
 }
 
 div.vis-network div.vis-manipulation div.vis-button, div.vis-network div.vis-edit-mode div.vis-button {
@@ -1021,13 +1019,13 @@ div.vis-network div.vis-manipulation div.vis-button, div.vis-network div.vis-edi
     -moz-border-radius: 15px;
     border-radius: 15px;
     display: inline-block;
-    background-position: 0px 0px;
+    background-position: 0 0;
     background-repeat: no-repeat;
     height: 24px;
-    margin: 0px 0px 0px 10px;
+    margin: 0 0 0 10px;
     vertical-align: middle;
     cursor: pointer;
-    padding: 0px 8px 0px 8px;
+    padding: 0 8px 0 8px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -1037,11 +1035,11 @@ div.vis-network div.vis-manipulation div.vis-button, div.vis-network div.vis-edi
 }
 
 div.vis-network div.vis-manipulation div.vis-button:hover {
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, .2);
 }
 
 div.vis-network div.vis-manipulation div.vis-button:active {
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, .5);
 }
 
 div.vis-network div.vis-manipulation div.vis-button.vis-back {
@@ -1075,8 +1073,8 @@ div.vis-network div.vis-manipulation div.vis-button.vis-edit, div.vis-network di
 }
 
 div.vis-network div.vis-edit-mode div.vis-button.vis-edit.vis-edit-mode {
-    background-color: #fcfcfc;
-    border: 1px solid #cccccc;
+    background-color: #FCFCFC;
+    border: 1px solid #CCCCCCCCCCCC;
 }
 
 div.vis-network div.vis-manipulation div.vis-button.vis-connect {
@@ -1118,12 +1116,12 @@ div.vis-network-tooltip {
     font-family: verdana;
     font-size: 14px;
     font-color: #000000;
-    background-color: #f5f4ed;
+    background-color: #F5F4ED;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     border: 1px solid #808074;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
     pointer-events: none;
 }
 
@@ -1146,11 +1144,11 @@ div.vis-network div.vis-navigation div.vis-button {
 }
 
 div.vis-network div.vis-navigation div.vis-button:hover {
-    box-shadow: 0 0 3px 3px rgba(56, 207, 21, 0.3);
+    box-shadow: 0 0 3px 3px rgba(56, 207, 21, .3);
 }
 
 div.vis-network div.vis-navigation div.vis-button:active {
-    box-shadow: 0 0 1px 3px rgba(56, 207, 21, 0.95);
+    box-shadow: 0 0 1px 3px rgba(56, 207, 21, .95);
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-up {
@@ -1203,9 +1201,9 @@ div.vis-color-picker {
     height: 425px;
     padding: 10px;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     display: none;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
+    box-shadow: rgba(0, 0, 0, .5) 0 0 10px 0;
 }
 
 div.vis-color-picker div.vis-arrow {
@@ -1227,7 +1225,7 @@ div.vis-color-picker div.vis-arrow::after, div.vis-color-picker div.vis-arrow::b
 
 div.vis-color-picker div.vis-arrow::after {
     border-color: rgba(255, 255, 255, 0);
-    border-right-color: #ffffff;
+    border-right-color: #FFFFFF;
     border-width: 30px;
     margin-top: -30px;
 }
@@ -1256,20 +1254,20 @@ div.vis-color-picker div.vis-selector {
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    border: 1px solid #ffffff;
-    background: #4c4c4c;
+    border: 1px solid #FFFFFF;
+    background: #4C4C4C;
     /* Old browsers */
     background: -moz-linear-gradient(
         top,
-        #4c4c4c 0%,
+        #4C4C4C 0%,
         #595959 12%,
         #666666 25%,
         #474747 39%,
-        #2c2c2c 50%,
+        #2C2C2C 50%,
         #000000 51%,
         #111111 60%,
-        #2b2b2b 76%,
-        #1c1c1c 91%,
+        #2B2B2B 76%,
+        #1C1C1C 91%,
         #131313 100%
     );
     /* FF3.6+ */
@@ -1277,75 +1275,75 @@ div.vis-color-picker div.vis-selector {
         linear,
         left top,
         left bottom,
-        color-stop(0%, #4c4c4c),
+        color-stop(0%, #4C4C4C),
         color-stop(12%, #595959),
         color-stop(25%, #666666),
         color-stop(39%, #474747),
-        color-stop(50%, #2c2c2c),
+        color-stop(50%, #2C2C2C),
         color-stop(51%, #000000),
         color-stop(60%, #111111),
-        color-stop(76%, #2b2b2b),
-        color-stop(91%, #1c1c1c),
+        color-stop(76%, #2B2B2B),
+        color-stop(91%, #1C1C1C),
         color-stop(100%, #131313)
     );
     /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(
         top,
-        #4c4c4c 0%,
+        #4C4C4C 0%,
         #595959 12%,
         #666666 25%,
         #474747 39%,
-        #2c2c2c 50%,
+        #2C2C2C 50%,
         #000000 51%,
         #111111 60%,
-        #2b2b2b 76%,
-        #1c1c1c 91%,
+        #2B2B2B 76%,
+        #1C1C1C 91%,
         #131313 100%
     );
     /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(
         top,
-        #4c4c4c 0%,
+        #4C4C4C 0%,
         #595959 12%,
         #666666 25%,
         #474747 39%,
-        #2c2c2c 50%,
+        #2C2C2C 50%,
         #000000 51%,
         #111111 60%,
-        #2b2b2b 76%,
-        #1c1c1c 91%,
+        #2B2B2B 76%,
+        #1C1C1C 91%,
         #131313 100%
     );
     /* Opera 11.10+ */
     background: -ms-linear-gradient(
         top,
-        #4c4c4c 0%,
+        #4C4C4C 0%,
         #595959 12%,
         #666666 25%,
         #474747 39%,
-        #2c2c2c 50%,
+        #2C2C2C 50%,
         #000000 51%,
         #111111 60%,
-        #2b2b2b 76%,
-        #1c1c1c 91%,
+        #2B2B2B 76%,
+        #1C1C1C 91%,
         #131313 100%
     );
     /* IE10+ */
     background: linear-gradient(
         to bottom,
-        #4c4c4c 0%,
+        #4C4C4C 0%,
         #595959 12%,
         #666666 25%,
         #474747 39%,
-        #2c2c2c 50%,
+        #2C2C2C 50%,
         #000000 51%,
         #111111 60%,
-        #2b2b2b 76%,
-        #1c1c1c 91%,
+        #2B2B2B 76%,
+        #1C1C1C 91%,
         #131313 100%
     );
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C4C4C', endColorstr='#131313',GradientType=0 );
     /* IE6-9 */
 }
 
@@ -1353,14 +1351,14 @@ div.vis-color-picker div.vis-new-color {
     position: absolute;
     width: 140px;
     height: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 5px;
     top: 380px;
     left: 159px;
     text-align: right;
     padding-right: 2px;
     font-size: 10px;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, .4);
     vertical-align: middle;
     line-height: 20px;
 }
@@ -1369,14 +1367,14 @@ div.vis-color-picker div.vis-initial-color {
     position: absolute;
     width: 140px;
     height: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 5px;
     top: 380px;
     left: 10px;
     text-align: left;
     padding-left: 2px;
     font-size: 10px;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, .4);
     vertical-align: middle;
     line-height: 20px;
 }
@@ -1404,40 +1402,32 @@ div.vis-color-picker div.vis-button {
     text-align: center;
     line-height: 25px;
     top: 410px;
-    border: 2px solid #d9d9d9;
-    background-color: #f7f7f7;
+    border: 2px solid #D9D9D9;
+    background-color: #F7F7F7;
     cursor: pointer;
 }
 
 div.vis-color-picker div.vis-button.vis-cancel {
-    /*border:2px solid #ff4e33;
-    */
-    /*background-color: #ff7761;
-    */
+    /* border:2px solid #ff4e33; */
+    /* background-color: #ff7761; */
     left: 5px;
 }
 
 div.vis-color-picker div.vis-button.vis-load {
-    /*border:2px solid #a153e6;
-    */
-    /*background-color: #cb8dff;
-    */
+    /* border:2px solid #a153e6; */
+    /* background-color: #cb8dff; */
     left: 82px;
 }
 
 div.vis-color-picker div.vis-button.vis-apply {
-    /*border:2px solid #4588e6;
-    */
-    /*background-color: #82b6ff;
-    */
+    /* border:2px solid #4588E6; */
+    /* background-color: #82b6ff; */
     left: 159px;
 }
 
 div.vis-color-picker div.vis-button.vis-save {
-    /*border:2px solid #45e655;
-    */
-    /*background-color: #6dff7c;
-    */
+    /* border:2px solid #45e655; */
+    /* background-color: #6dff7c; */
     left: 236px;
 }
 
