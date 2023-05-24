@@ -4,24 +4,21 @@ namespace Kanboard\Plugin\LinkRelations;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
-// use Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\AgeHelper;  // Helper Class and Filename should be exact
-// use Kanboard\Helper;  // Add core Helper for using forms etc. inside external templates
 
 class Plugin extends Base
 {
     public function initialize()
     {
-        // Template Override
-        //  - Override name should be camelCase e.g. pluginNameExampleCamelCase
-        $this->template->setTemplateOverride('action/index', 'pluginNameExampleCamelCase:action/index');
-
         // CSS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:css', array('template' => 'plugins/PluginNameExampleStudlyCaps/Assets/css/link-relations.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/LinkRelations/Assets/css/link-relations.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/LinkRelations/Assets/css/vis.min.css'));
 
         // JS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:js', array('template' => 'plugins/PluginNameExampleStudlyCaps/Assets/js/link-relations.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/LinkRelations/Assets/js/link-relations.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/LinkRelations/Assets/js/link-relations-graph-builder.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/LinkRelations/Assets/js/vis.min.js'));
 
         // Views - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
