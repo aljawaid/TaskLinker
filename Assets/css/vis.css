@@ -365,9 +365,6 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
     width: 100%;
     color: #4D4D4D;
     box-sizing: border-box;
-}
-
-.vis-labelset .vis-label {
     border-bottom: 1px solid #BFBFBF;
 }
 
@@ -613,34 +610,6 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
     cursor: move;
     z-index: 1;
 }
-
-.vis-timeline {
-    /* -webkit-transition: height .4s ease-in-out;
-     transition: height .4s ease-in-out;
-     */
-}
-
-.vis-panel {
-    /* -webkit-transition: height .4s ease-in-out, top .4s ease-in-out;
-     transition: height .4s ease-in-out, top .4s ease-in-out;
-     */
-}
-
-.vis-axis {
-    /* -webkit-transition: top .4s ease-in-out;
-     transition: top .4s ease-in-out;
-     */
-}
-
-/* TODO: get animation working nicely .vis-item {
-     -webkit-transition: top .4s ease-in-out;
-     transition: top .4s ease-in-out;
-}
- .vis-item.line {
-     -webkit-transition: height .4s ease-in-out, top .4s ease-in-out;
-     transition: height .4s ease-in-out, top .4s ease-in-out;
-}
-*/
 
 .vis-panel.vis-background.vis-horizontal .vis-grid.vis-horizontal {
     position: absolute;
@@ -897,7 +866,7 @@ div.vis-network div.vis-close:hover {
 div.vis-network div.vis-manipulation div.vis-button, div.vis-network div.vis-edit-mode div.vis-button {
     position: relative;
     top: -7px;
-    font-family: verdana;
+    font-family: Verdana, sans-serif;
     font-size: 12px;
     -moz-border-radius: 15px;
     border-radius: 15px;
@@ -987,7 +956,7 @@ div.vis-network-tooltip {
     visibility: hidden;
     padding: 5px;
     white-space: nowrap;
-    font-family: verdana;
+    font-family: Verdana, sans-serif;
     font-size: 14px;
     color: #000000;
     background-color: #F5F4ED;
