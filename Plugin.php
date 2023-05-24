@@ -12,7 +12,7 @@ class Plugin extends Base
         // CSS - Asset Hook
         //  - Keep filename lowercase
         $this->hook->on('template:layout:css', array('template' => 'plugins/LinkRelations/Assets/css/link-relations.css'));
-        $this->hook->on('template:layout:css', array('template' => 'plugins/LinkRelations/Assets/css/vis.min.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/LinkRelations/Assets/css/vis.css'));
 
         // JS - Asset Hook
         //  - Keep filename lowercase
@@ -32,11 +32,6 @@ class Plugin extends Base
         //  - Example: $this->route->addRoute('/my/custom/route', 'MyController', 'show', 'PluginNameExampleStudlyCaps');
         //  - Must have the corresponding action in the matching controller
         $this->route->addRoute('/ / ', ' ', ' ', 'LinkRelations');
-
-        // Helper
-        //  - Example: $this->helper->register('helperClassNameCamelCase', '\Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\HelperNameExampleStudlyCaps');
-        //  - Add each Helper in the 'use' section at the top of this file
-        $this->helper->register(' ', '\Kanboard\Plugin\  \Helper\  ');
     }
 
     public function onStartup()
