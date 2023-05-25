@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\LinkRelations;
+namespace Kanboard\Plugin\RelationshipManager;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
@@ -11,18 +11,18 @@ class Plugin extends Base
     {
         // CSS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:css', array('template' => 'plugins/LinkRelations/Assets/css/link-relations.css'));
-        $this->hook->on('template:layout:css', array('template' => 'plugins/LinkRelations/Assets/css/vis.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/RelationshipManager/Assets/css/relationship-manager.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/RelationshipManager/Assets/css/vis.css'));
 
         // JS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:js', array('template' => 'plugins/LinkRelations/Assets/js/link-relations.js'));
-        $this->hook->on('template:layout:js', array('template' => 'plugins/LinkRelations/Assets/js/link-relations-graph-builder.js'));
-        $this->hook->on('template:layout:js', array('template' => 'plugins/LinkRelations/Assets/js/vis.min.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/RelationshipManager/Assets/js/relationship-manager.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/RelationshipManager/Assets/js/relationship-manager-graph-builder.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/RelationshipManager/Assets/js/vis.min.js'));
 
         // Views - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
-        $this->template->hook->attach('template:project-header:view-switcher-before-project-overview', 'pluginNameExampleCamelCase:project_header/actions');
+        //$this->template->hook->attach('template:project-header:view-switcher-before-project-overview', 'pluginNameExampleCamelCase:project_header/actions');
 
         // Views - Add Menu Item - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
@@ -31,7 +31,7 @@ class Plugin extends Base
         // Extra Page - Routes
         //  - Example: $this->route->addRoute('/my/custom/route', 'MyController', 'show', 'PluginNameExampleStudlyCaps');
         //  - Must have the corresponding action in the matching controller
-        $this->route->addRoute('/ / ', ' ', ' ', 'LinkRelations');
+        //$this->route->addRoute('/ / ', ' ', ' ', 'RelationshipManager');
     }
 
     public function onStartup()
@@ -43,7 +43,7 @@ class Plugin extends Base
     {
         // Plugin Name MUST be identical to namespace for Plugin Directory to detect updated versions
         // Do not translate the plugin name here
-        return 'LinkRelations';
+        return 'RelationshipManager';
     }
 
     public function getPluginDescription()
@@ -72,6 +72,6 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/aljawaid/LinkRelations';
+        return 'https://github.com/aljawaid/RelationshipManager';
     }
 }
