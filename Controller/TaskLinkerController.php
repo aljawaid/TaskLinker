@@ -1,18 +1,19 @@
 <?php
 
-namespace Kanboard\Plugin\PluginNameExampleStudlyCaps\Controller;
+namespace Kanboard\Plugin\TaskLinker\Controller;
 
 use Kanboard\Controller\BaseController;
 use Kanboard\Core\Plugin\Directory;
 
 /**
- * Plugin PluginNameExampleStudlyCaps
- * Class myController
+ * Plugin TaskLinker
  *
- * @author
+ * Class TaskLinkerController
+ * @package  Kanboard\Controller
+ * @author   aljawaid
  */
 
-class MyController extends \Kanboard\Controller\PluginController
+class TaskLinkerController extends \Kanboard\Controller\PluginController
 {
     /**
      * Display the Settings Page
@@ -27,8 +28,8 @@ class MyController extends \Kanboard\Controller\PluginController
 
     public function show()
     {
-        $this->response->html($this->helper->layout->config('pluginNameExampleCamelCase:folder/filename', array(
-            'title' => t('PluginNameExampleStudlyCaps') . ' &#10562; ' . t('Settings'),
+        $this->response->html($this->helper->layout->config('taskLinker:folder/filename', array(
+            'title' => t('Task Linker') . ' &#10562; ' . t('Settings'),
         )));
     }
 }

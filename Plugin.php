@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\RelationshipManager;
+namespace Kanboard\Plugin\TaskLinker;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
@@ -11,14 +11,14 @@ class Plugin extends Base
     {
         // CSS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:css', array('template' => 'plugins/RelationshipManager/Assets/css/relationship-manager.css'));
-        $this->hook->on('template:layout:css', array('template' => 'plugins/RelationshipManager/Assets/css/vis.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/TaskLinker/Assets/css/task-linker.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/TaskLinker/Assets/css/vis.css'));
 
         // JS - Asset Hook
         //  - Keep filename lowercase
-        $this->hook->on('template:layout:js', array('template' => 'plugins/RelationshipManager/Assets/js/relationship-manager.js'));
-        $this->hook->on('template:layout:js', array('template' => 'plugins/RelationshipManager/Assets/js/relationship-manager-graph-builder.js'));
-        $this->hook->on('template:layout:js', array('template' => 'plugins/RelationshipManager/Assets/js/vis.min.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/TaskLinker/Assets/js/task-linker.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/TaskLinker/Assets/js/task-linker-graph-builder.js'));
+        $this->hook->on('template:layout:js', array('template' => 'plugins/TaskLinker/Assets/js/vis.min.js'));
 
         // Views - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
@@ -31,7 +31,7 @@ class Plugin extends Base
         // Extra Page - Routes
         //  - Example: $this->route->addRoute('/my/custom/route', 'MyController', 'show', 'PluginNameExampleStudlyCaps');
         //  - Must have the corresponding action in the matching controller
-        //$this->route->addRoute('/ / ', ' ', ' ', 'RelationshipManager');
+        //$this->route->addRoute('/ / ', ' ', ' ', 'TaskLinker');
     }
 
     public function onStartup()
@@ -43,7 +43,7 @@ class Plugin extends Base
     {
         // Plugin Name MUST be identical to namespace for Plugin Directory to detect updated versions
         // Do not translate the plugin name here
-        return 'RelationshipManager';
+        return 'TaskLinker';
     }
 
     public function getPluginDescription()
@@ -72,6 +72,6 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/aljawaid/RelationshipManager';
+        return 'https://github.com/aljawaid/TaskLinker';
     }
 }
