@@ -32,7 +32,6 @@ class Plugin extends Base
         //  - Example: $this->route->addRoute('/my/custom/route', 'MyController', 'show', 'PluginNameExampleStudlyCaps');
         //  - Must have the corresponding action in the matching controller
         //$this->route->addRoute('/ / ', ' ', ' ', 'TaskLinker');
-
     }
 
     public function onStartup()
