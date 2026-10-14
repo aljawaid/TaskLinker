@@ -31,13 +31,12 @@
     </a>
 </p>
 
-Use internal and external links to their full potential. This plugin uses a graph library (included) to show relationships created between tasks. Detect Nextcloud installations automatically when adding external links.
+Use internal links to their full potential. This plugin uses an included graph library to show relationships created between tasks.
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Features
 
-- Add Nextcloud support for external links
 - Show links between tasks in a graph (imported feature from [Relationgraph](https://github.com/TimoStahl/kanboard_plugin_relationgraph) _(fork)_
   - This plugin uses [vis.js](https://github.com/almende/vis "A dynamic, browser-based visualization library") (included) to display the graph
 
@@ -63,14 +62,8 @@ Go to `Settings` &#10562;
     <a href="https://github.com/aljawaid/TaskLinker/actions/workflows/linter.yml">
         <img src="https://github.com/aljawaid/TaskLinker/actions/workflows/linter.yml/badge.svg?branch=master&event=push" alt="Code Scanning" title="View Test">
     </a>
-    <a href="https://github.com/aljawaid/TaskLinker/actions/workflows/php-compatibility-7.4.yaml">
-        <img src="https://github.com/aljawaid/TaskLinker/actions/workflows/php-compatibility-7.4.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
-    </a>
-    <a href="https://github.com/aljawaid/TaskLinker/actions/workflows/php-compatibility-8.0.yaml">
-        <img src="https://github.com/aljawaid/TaskLinker/actions/workflows/php-compatibility-8.0.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
-    </a>
-    <a href="https://github.com/aljawaid/TaskLinker/actions/workflows/php-compatibility-8.2.yaml">
-        <img src="https://github.com/aljawaid/TaskLinker/actions/workflows/php-compatibility-8.2.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
+    <a href="https://github.com/aljawaid/TaskLinker/actions/workflows/php-compatibility.yaml">
+        <img src="https://github.com/aljawaid/TaskLinker/actions/workflows/php-compatibility.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
     </a>
 </p>
 

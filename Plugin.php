@@ -33,8 +33,6 @@ class Plugin extends Base
         //  - Must have the corresponding action in the matching controller
         //$this->route->addRoute('/ / ', ' ', ' ', 'TaskLinker');
 
-        // Register New Link Provider
-        $this->externalLinkManager->register(new NextcloudLinkProvider($this->container));
     }
 
     public function onStartup()
