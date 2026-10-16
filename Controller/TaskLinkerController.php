@@ -3,33 +3,42 @@
 namespace Kanboard\Plugin\TaskLinker\Controller;
 
 use Kanboard\Controller\BaseController;
-use Kanboard\Core\Plugin\Directory;
+use Kanboard\Core\Controller\AccessForbiddenException;
+use Kanboard\Plugin\TaskLinker\Plugin;
 
 /**
- * Plugin TaskLinker
+ * Displays a bounded relationship graph for an authorised task.
  *
- * Class TaskLinkerController
- * @package  Kanboard\Controller
- * @author   aljawaid
+ * Related test file: tests/GraphIntegrationTest.php.
  */
-
-class TaskLinkerController extends \Kanboard\Controller\PluginController
+class TaskLinkerController extends BaseController
 {
     /**
-     * Display the Settings Page
-     * Use this function to create a page showing your template content.
-     * This function must be checked with 'Views - Add Menu Item - Template Hook' in Plugin.php
-     * This function must be checked with 'Extra Page - Routes' in Plugin.php
-     * Use: $this->helper->layout->config for config settings menu sidebar
-     * Use: $this->helper->layout->plugin for plugin menu sidebar
+     * Display the relationship graph.
      *
-     * @access public
+     * @return void
      */
-
     public function show()
     {
-        $this->response->html($this->helper->layout->config('taskLinker:folder/filename', array(
-            'title' => t('Task Linker') . ' &#10562; ' . t('Settings'),
+        $task = $this->getTask();
+        $userId = (int) $this->userSession->getId();
+
+        // Related tasks can cross project boundaries, so the root is checked explicitly too.
+        if (!$this->projectPermissionModel->isUserAllowed((int) $task['project_id'], $userId)) {
+            throw new AccessForbiddenException();
+        }
+
+        $maxNodes = Plugin::normalizeGraphMaxNodes(
+            $this->configModel->get(Plugin::GRAPH_MAX_NODES_KEY, Plugin::GRAPH_MAX_NODES_DEFAULT)
+        );
+        $graph = $this->taskGraphModel->build($task, $userId, $maxNodes);
+
+        $this->response->html($this->helper->layout->task('taskLinker:task/show', array(
+            'title' => t('Relationship graph'),
+            'task' => $task,
+            'project' => $this->projectModel->getById($task['project_id']),
+            'graph' => $graph,
+            'max_nodes' => $maxNodes,
         )));
     }
 }

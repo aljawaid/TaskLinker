@@ -1,48 +1,134 @@
-/* KANBOARD PLUGIN - CSS FILE */
+/* TaskLinker graph and settings presentation. Related test: tests/PresentationCompatibilityTest.php. */
 
-:root {
-    --pp-blue: #007AC9;
-    --pp-blue-alt: #00ADFF;
-    --pp-red: #B71234;
-    --pp-red-alt: #DA004C;
-    --pp-red-alt-2: #AE003D;
-    --pp-black: #000000;
-    --pp-light-grey: #8F8F8F;
-    --pp-grey: #4D4D4D;
-    --pp-white: #FFFFFF;
-    --pp-green: #2EA02E;
-    --pp-green-dark: #055D20;
-    --pp-orange: #FF6500;
-    --blue-icon-dark: #034CA6;
-    --button-blue-gradient: linear-gradient(to bottom, #7892C2 80%, #476E9E 100%);
-    --blue-border-gradient-match: #476E9E;
-    --button-background-delete: #D05C84;
-    --link-color-primary: #3366CC;
-    --header-page-margin-ksp: 5px 15px 10px 15px;
-    --page-margin-ksp: 0 15px 0 15px;
-    --title-margin-ksp: 0 15px 0 15px;
-    --border-radius-ksp: 3px;
-    --panel-background-ksp: #EEEEEE;
-    --transition-ksp: ease-in-out all .3s;
+.task-linker-page {
+    --task-linker-border: var(--panel-border-color, #d4d4d8);
+    --task-linker-surface: var(--panel-background-color, #ffffff);
+    --task-linker-muted: var(--color-light, #64748b);
+    --task-linker-text: var(--color-primary, #27272a);
+
+    color: var(--task-linker-text);
 }
 
-.pp-blue { color: var(--pp-blue); fill: var(--pp-blue); }
-.pp-blue-alt { color: var(--pp-blue-alt); fill: var(--pp-blue-alt); }
-.pp-red { color: var(--pp-red); fill: var(--pp-red); }
-.pp-red-alt { color: var(--pp-red-alt); fill: var(--pp-red-alt); }
-.pp-red-alt-2 { color: var(--pp-red-alt-2); fill: var(--pp-red-alt-2); }
-.pp-black { color: var(--pp-black); fill: var(--pp-black); }
-.pp-light-grey { color: var(--pp-light-grey); fill: var(--pp-light-grey); }
-.pp-grey { color: var(--pp-grey); fill: var(--pp-grey); }
-.pp-white { color: var(--pp-white); fill: var(--pp-white); }
-.pp-green { color: var(--pp-green); fill: var(--pp-green); }
-.pp-dark-green { color: var(--pp-green-dark); fill: var(--pp-green-dark); }
-.pp-orange { color: var(--pp-orange); fill: var(--pp-orange); }
+.task-linker-toolbar {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
 
-.display-none, .d-none { display: none; }
+.task-linker-summary {
+    color: var(--task-linker-muted);
+    margin: 0;
+}
 
-.font-weight-bold { font-weight: bold; }
+.task-linker-network {
+    background: var(--task-linker-surface);
+    border: 1px solid var(--task-linker-border);
+    border-radius: 6px;
+    box-sizing: border-box;
+    height: clamp(30rem, 68vh, 52rem);
+    min-height: 30rem;
+    outline: none;
+    width: 100%;
+}
 
-.text-center { text-align: center; }
+.task-linker-network:focus-visible {
+    border-color: var(--input-focus-border-color, #5b9dd9);
+    box-shadow: 0 0 0 2px var(--input-focus-shadow-color, rgb(82, 168, 236, 0.45));
+}
 
-.relative { position: relative; }
+.task-linker-notice {
+    background: var(--alert-background-color-info, #e0f2fe);
+    border: 1px solid var(--alert-border-color-info, #7dd3fc);
+    border-radius: 4px;
+    color: var(--alert-color-info, #075985);
+    margin-bottom: 0.75rem;
+    padding: 0.65rem 0.8rem;
+}
+
+.task-linker-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    list-style: none;
+    margin: 0.75rem 0;
+    padding: 0;
+}
+
+.task-linker-legend li {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.35rem;
+    margin: 0;
+}
+
+.task-linker-legend-swatch {
+    background: var(--task-linker-surface);
+    border: 2px solid var(--task-linker-muted);
+    border-radius: 3px;
+    display: inline-block;
+    height: 0.8rem;
+    width: 1.25rem;
+}
+
+.task-linker-legend-swatch-current {
+    border-width: 4px;
+}
+
+.task-linker-legend-swatch-closed {
+    border-style: dashed;
+}
+
+.task-linker-task-list {
+    border-top: 1px solid var(--task-linker-border);
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+}
+
+.task-linker-task-list summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.task-linker-task-list ul {
+    margin: 0.75rem 0 0 1.25rem;
+}
+
+.task-linker-settings-field {
+    margin-bottom: 1.25rem;
+}
+
+.task-linker-settings-field textarea {
+    min-height: 7rem;
+}
+
+.task-linker-settings-field .form-help {
+    color: var(--color-light, #64748b);
+}
+
+@media (max-width: 768px) {
+    .task-linker-network {
+        height: clamp(24rem, 62vh, 38rem);
+        min-height: 24rem;
+    }
+
+    .task-linker-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .task-linker-toolbar .btn {
+        align-self: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .task-linker-page *,
+    .task-linker-page *::before,
+    .task-linker-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
