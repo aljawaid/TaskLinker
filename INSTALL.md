@@ -1,22 +1,49 @@
-# Plugin Installation
+# TaskLinker installation
 
-- **Install via the [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software") Plugin Directory**
-  - _Go to:_
-    - Kanboard: `Plugins` &#10562; `Plugin Directory`
-  - _or with [PluginManager](https://github.com/aljawaid/PluginManager "A Kanboard plugin") installed:_
-    - Kanboard: `Settings` &#10562; `Plugins` &#10562; `Plugin Directory`
-- **Install via the [Releases](../master/Releases/ "A copy of each release is saved in the folder") folder**
-  - A copy of each release is saved in the `/Releases` folder of the repository
-  - Simply extract the `.zip` file into the `/plugins` directory
-- **Install via [GitHub](https://github.com/ "Find the correct plugin from the list of repositories")**
-  - Download the `.zip` file and decompress everything under the directory `/plugins`
-  - The folder inside the `.zip` must not contain any branch names and must be exact case (matching the plugin name)
+## Requirements
 
-_Note: The `/plugins` folder is case-sensitive._
+- Kanboard 1.2.54 or later.
+- PHP 8.2 to 8.5.
+- Permission to create the Kanboard `plugins` directory or write inside it.
 
-- **Install using Git CLI**
-  - `git clone` (_or ftp upload_) and extract the `.zip` file into this folder: `.\plugins\` (must be exact case)
+TaskLinker does not change the database and does not require Composer or npm on
+the Kanboard server.
 
----
+## Install from a downloaded archive
 
-Read the full [**Changelog**](../master/changelog.md "See changes") or view the [**README**](../master/README.md "View README")
+1. Download the repository archive from
+   [GitHub](https://github.com/aljawaid/TaskLinker).
+2. Extract it outside the Kanboard installation.
+3. Rename the extracted directory to exactly `TaskLinker` if the branch name
+   was included in the archive name.
+4. Copy the complete directory to `kanboard/plugins/TaskLinker`.
+5. Sign in to Kanboard as an administrator and confirm that TaskLinker appears
+   on the **Plugins** page.
+6. Open **Settings > Task relationships** and review the graph limit and
+   optional Nextcloud base URLs.
+
+The plugin directory name is case-sensitive on Linux and must be `TaskLinker`.
+
+## Install with Git
+
+From Kanboard's `plugins` directory, run:
+
+```shell
+git clone https://github.com/aljawaid/TaskLinker.git TaskLinker
+```
+
+Pin production installations to a reviewed release tag when one is available;
+do not leave a production server following an unreviewed development branch.
+
+## Upgrade
+
+1. Take the normal Kanboard application and configuration backup.
+2. Replace the existing `plugins/TaskLinker` files with the reviewed new
+   version, preserving the exact directory name.
+3. Do not merge old and new vendor asset directories.
+4. Sign in and verify the plugin version, a representative relationship graph,
+   and one configured Nextcloud link.
+5. If validation fails, restore the previous plugin directory from the backup.
+
+TaskLinker stores its settings in Kanboard's existing configuration table, so
+the normal Kanboard database backup protects them.

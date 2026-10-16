@@ -1,2 +1,2 @@
-# Vendored Vis.js stylesheet is maintained upstream.
-Assets/css/vis.css
+# Vendored vis-network styles are maintained upstream.
+Assets/vendor/**

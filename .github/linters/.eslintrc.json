@@ -7,7 +7,7 @@
     },
     "root": true,
     "extends": "eslint:recommended",
-    "ignorePatterns": ["clipboard-*.min.js", "**/vendor/*.js", "vis.js", "vis.min.js"],
+    "ignorePatterns": ["clipboard-*.min.js", "Assets/vendor/**/*.js"],
     "globals": {
       "ClipboardJS": "readonly"
     },
