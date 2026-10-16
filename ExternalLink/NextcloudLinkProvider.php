@@ -15,6 +15,7 @@ class NextcloudLinkProvider extends BaseLinkProvider implements ExternalLinkProv
 {
     public const TYPE = 'task_linker_nextcloud';
 
+
     /**
      * @var array
      */

@@ -20,7 +20,7 @@ $edgesJson = json_encode($graph['edges'], $jsonFlags);
         </h2>
     </div>
 
-    <?php if ($graph['truncated']) : ?>
+    <?php if ($graph['truncated']): ?>
         <p class="task-linker-notice" role="status">
             <?= e(
                 'The graph reached its configured limit of %d tasks. ' .
@@ -30,7 +30,7 @@ $edgesJson = json_encode($graph['edges'], $jsonFlags);
         </p>
     <?php endif ?>
 
-    <?php if ($graph['linked_count'] === 0) : ?>
+    <?php if ($graph['linked_count'] === 0): ?>
         <p class="task-linker-notice"><?= t('This task has no linked tasks.') ?></p>
     <?php endif ?>
 
@@ -70,20 +70,20 @@ $edgesJson = json_encode($graph['edges'], $jsonFlags);
 
     <details class="task-linker-task-list">
         <summary><?= t('Linked tasks list') ?></summary>
-        <?php if ($graph['linked_count'] === 0) : ?>
+        <?php if ($graph['linked_count'] === 0): ?>
             <p><?= t('No linked tasks are available.') ?></p>
-        <?php else : ?>
+        <?php else: ?>
             <ul>
-                <?php foreach ($graph['nodes'] as $node) : ?>
-                    <?php if (!$node['is_current']) : ?>
+                <?php foreach ($graph['nodes'] as $node): ?>
+                    <?php if (!$node['is_current']): ?>
                         <li>
                             <a href="<?= $this->text->e($node['url']) ?>">
                                 #<?= (int) $node['id'] ?> <?= $this->text->e($node['title_text']) ?>
                             </a>
-                            <?php if ($node['project_name'] !== '') : ?>
+                            <?php if ($node['project_name'] !== ''): ?>
                                 <span>— <?= $this->text->e($node['project_name']) ?></span>
                             <?php endif ?>
-                            <?php if (!$node['is_active']) : ?>
+                            <?php if (!$node['is_active']): ?>
                                 <span>(<?= t('Closed') ?>)</span>
                             <?php endif ?>
                         </li>
