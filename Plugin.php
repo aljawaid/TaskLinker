@@ -22,6 +22,8 @@ class Plugin extends Base
     public const GRAPH_MAX_NODES_MIN = 10;
     public const GRAPH_MAX_NODES_MAX = 250;
     public const NEXTCLOUD_ORIGINS_KEY = 'task_linker_nextcloud_origins';
+    public const EXTERNAL_LINK_STORAGE_KEY = 'task_linker_external_link_storage';
+    public const EXTERNAL_LINK_STORAGE_VERSION = 'weblink-v1';
 
     public function initialize()
     {
@@ -45,6 +47,19 @@ class Plugin extends Base
         // Navigation hooks expose the graph from tasks and settings from the administrator area.
         $this->template->hook->attach('template:task:sidebar:information', 'taskLinker:task/sidebar');
         $this->template->hook->attach('template:config:sidebar', 'taskLinker:config/sidebar');
+
+        // Upgrade legacy provider rows once so preserved links stay usable after uninstall.
+        if ($this->configModel->get(
+            self::EXTERNAL_LINK_STORAGE_KEY,
+            ''
+        ) !== self::EXTERNAL_LINK_STORAGE_VERSION) {
+            $this->db->table('task_has_external_links')
+                ->eq('link_type', NextcloudLinkProvider::LEGACY_TYPE)
+                ->update(array('link_type' => NextcloudLinkProvider::TYPE));
+            $this->configModel->save(array(
+                self::EXTERNAL_LINK_STORAGE_KEY => self::EXTERNAL_LINK_STORAGE_VERSION,
+            ));
+        }
 
         // Invalid stored values must not prevent Kanboard from loading the plugin.
         try {
@@ -116,7 +131,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.1.1';
+        return '1.1.2';
     }
 
     public function getCompatibleVersion()

@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.2 - 2026-10-18
+
+- Fixed preserved Nextcloud links breaking task pages after TaskLinker was
+  uninstalled by storing them as Kanboard Web Links.
+- Added an automatic compatibility migration for links created by TaskLinker
+  1.1.0 and 1.1.1 without deleting their titles, URLs or relationships.
+- Retained normal Web Link matching and metadata behaviour for links outside
+  the configured Nextcloud origins.
+
 ## v1.1.1 - 2026-10-18
 
 - Increased the theme-derived muted text contrast so graph summaries remain

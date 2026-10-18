@@ -6,6 +6,7 @@
 
 use Kanboard\Plugin\TaskLinker\ExternalLink\NextcloudLinkProvider;
 use Kanboard\Plugin\TaskLinker\ExternalLink\NextcloudUrlPolicy;
+use Kanboard\ExternalLink\WebLink;
 
 $origins = NextcloudUrlPolicy::parseOrigins(
     "https://Cloud.Example.test/nextcloud/\nhttps://cloud.example.test/nextcloud"
@@ -51,9 +52,9 @@ $provider = new NextcloudLinkProvider($container, $origins);
 $provider->setUserTextInput('https://cloud.example.test/nextcloud/index.php/s/share-token');
 taskLinkerAssertTrue($provider->match(), 'The provider must recognise an approved Nextcloud share.');
 taskLinkerAssertSame(
-    'task_linker_nextcloud',
+    'weblink',
     $provider->getType(),
-    'The provider type must not replace Kanboard Web Link.'
+    'Approved links must use Kanboard Web Link storage so they survive uninstall.'
 );
 $link = $provider->getLink();
 taskLinkerAssertSame('Nextcloud shared item', $link->getTitle(), 'Share tokens must not become external-link titles.');
@@ -62,3 +63,12 @@ taskLinkerAssertSame(
     $link->getUrl(),
     'The original approved link must be preserved.'
 );
+
+$provider->setUserTextInput('https://www.example.com/reference');
+taskLinkerAssertTrue($provider->match(), 'The replacement Web Link provider must retain ordinary web links.');
+taskLinkerAssertTrue(
+    $provider->getLink() instanceof WebLink,
+    'Ordinary web links must continue through Kanboard core behaviour.'
+);
+$provider->setUserTextInput('ftp://www.example.com/reference');
+taskLinkerAssertFalse($provider->match(), 'Unsupported URL schemes must remain rejected.');

@@ -5,10 +5,11 @@
  */
 
 use Kanboard\Plugin\TaskLinker\Plugin;
+use Kanboard\Plugin\TaskLinker\ExternalLink\NextcloudLinkProvider;
 
 $plugin = $loadedPlugins['TaskLinker'];
 
-taskLinkerAssertSame('1.1.1', $plugin->getPluginVersion(), 'The production feature set must expose version 1.1.1.');
+taskLinkerAssertSame('1.1.2', $plugin->getPluginVersion(), 'The uninstall-safe provider fix must expose version 1.1.2.');
 taskLinkerAssertSame(
     '>=1.2.54',
     $plugin->getCompatibleVersion(),
@@ -55,5 +56,36 @@ foreach (array('template:layout:js', 'template:layout:css') as $hookName) {
         'Large graph assets must not load globally.'
     );
 }
+
+$migrationProjectId = $container['projectModel']->create(array('name' => 'External link migration fixture'));
+$migrationTaskId = $container['taskCreationModel']->create(array(
+    'project_id' => $migrationProjectId,
+    'title' => 'Preserved external link task',
+));
+$legacyLinkId = $container['db']->table('task_has_external_links')->persist(array(
+    'link_type' => NextcloudLinkProvider::LEGACY_TYPE,
+    'dependency' => 'related',
+    'title' => 'Nextcloud shared item',
+    'url' => 'https://cloud.example.test/nextcloud/index.php/s/preserved-link',
+    'date_creation' => time(),
+    'date_modification' => time(),
+    'task_id' => $migrationTaskId,
+    'creator_id' => 0,
+));
+taskLinkerAssertTrue($legacyLinkId !== false, 'The legacy external-link fixture must be created.');
+$container['configModel']->remove(Plugin::EXTERNAL_LINK_STORAGE_KEY);
+$container['memoryCache']->flush();
+$plugin->initialize();
+$migratedLink = $container['db']->table('task_has_external_links')->eq('id', $legacyLinkId)->findOne();
+taskLinkerAssertSame(
+    NextcloudLinkProvider::TYPE,
+    $migratedLink['link_type'],
+    'Legacy provider records must migrate to uninstall-safe Web Link storage.'
+);
+taskLinkerAssertSame(
+    'https://cloud.example.test/nextcloud/index.php/s/preserved-link',
+    $migratedLink['url'],
+    'The compatibility migration must preserve stored external-link data.'
+);
 
 taskLinkerAssertTrue(isset($container['taskGraphModel']), 'The bounded task graph model must be registered.');

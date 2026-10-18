@@ -4,6 +4,7 @@ namespace Kanboard\Plugin\TaskLinker\ExternalLink;
 
 use Kanboard\Core\ExternalLink\ExternalLinkProviderInterface;
 use Kanboard\ExternalLink\BaseLinkProvider;
+use Kanboard\ExternalLink\WebLink;
 use Pimple\Container;
 
 /**
@@ -13,7 +14,8 @@ use Pimple\Container;
  */
 class NextcloudLinkProvider extends BaseLinkProvider implements ExternalLinkProviderInterface
 {
-    public const TYPE = 'task_linker_nextcloud';
+    public const TYPE = 'weblink';
+    public const LEGACY_TYPE = 'task_linker_nextcloud';
 
 
     /**
@@ -33,7 +35,7 @@ class NextcloudLinkProvider extends BaseLinkProvider implements ExternalLinkProv
 
     public function getName()
     {
-        return t('Nextcloud link');
+        return t('Web Link');
     }
 
     public function getType()
@@ -50,12 +52,18 @@ class NextcloudLinkProvider extends BaseLinkProvider implements ExternalLinkProv
 
     public function match()
     {
-        return NextcloudUrlPolicy::matches($this->userInput, $this->origins);
+        $startsWithHttp = strpos($this->userInput, 'http://') === 0
+            || strpos($this->userInput, 'https://') === 0;
+
+        return $startsWithHttp && filter_var($this->userInput, FILTER_VALIDATE_URL) !== false;
     }
 
     public function getLink()
     {
-        $link = new NextcloudLink($this->container);
+        // Store the core Web Link type so preserved records remain usable after uninstall.
+        $link = NextcloudUrlPolicy::matches($this->userInput, $this->origins)
+            ? new NextcloudLink($this->container)
+            : new WebLink($this->container);
         $link->setUrl($this->userInput);
 
         return $link;
