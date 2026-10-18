@@ -8,7 +8,7 @@ use Kanboard\Plugin\TaskLinker\Plugin;
 
 $plugin = $loadedPlugins['TaskLinker'];
 
-taskLinkerAssertSame('1.1.0', $plugin->getPluginVersion(), 'The production feature set must expose version 1.1.0.');
+taskLinkerAssertSame('1.1.1', $plugin->getPluginVersion(), 'The production feature set must expose version 1.1.1.');
 taskLinkerAssertSame(
     '>=1.2.54',
     $plugin->getCompatibleVersion(),

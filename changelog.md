@@ -1,6 +1,11 @@
 # Changelog
 
-## v1.1.0 - Unreleased
+## v1.1.1 - 2026-10-18
+
+- Increased the theme-derived muted text contrast so graph summaries remain
+  readable at WCAG AA contrast in Kanboard Light and Dark.
+
+## v1.1.0 - 2026-10-18
 
 - Added a bounded, permission-aware relationship graph for internal task links.
 - Added responsive, theme-aware presentation and an accessible linked-task

@@ -5,6 +5,7 @@
     --task-linker-surface: var(--panel-background-color, #ffffff);
     --task-linker-muted: var(--color-light, #64748b);
     --task-linker-text: var(--color-primary, #27272a);
+    --task-linker-muted: color-mix(in srgb, var(--task-linker-text) 90%, var(--task-linker-surface));
 
     color: var(--task-linker-text);
 }

@@ -24,6 +24,11 @@ taskLinkerAssertContains(
     $stylesheet,
     'The graph must inherit Kanboard theme variables.'
 );
+taskLinkerAssertContains(
+    'color-mix(in srgb, var(--task-linker-text) 90%, var(--task-linker-surface))',
+    $stylesheet,
+    'Muted graph copy must retain theme-derived WCAG AA contrast.'
+);
 taskLinkerAssertNotContains('.pp-', $stylesheet, 'TaskLinker must not expose generic global utility classes.');
 
 $vendorNotice = file_get_contents(__DIR__ . '/../Assets/vendor/vis-network/README.md');
