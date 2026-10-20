@@ -36,7 +36,9 @@ files, authenticate to Nextcloud or make a remote request.
 - Kanboard 1.2.54 or later.
 - PHP 8.2, 8.3, 8.4 and 8.5.
 - No Kanboard core overrides.
-- No database migrations.
+- No custom database tables or Kanboard schema migrations.
+- Upgrades can normalise legacy TaskLinker external links to Kanboard Web Links
+  and record their progress in Kanboard's existing configuration table.
 
 See [INSTALL.md](INSTALL.md) for installation and upgrade instructions, and
 [changelog.md](changelog.md) for release notes.

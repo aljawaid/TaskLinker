@@ -6,8 +6,11 @@
 - PHP 8.2 to 8.5.
 - Permission to create the Kanboard `plugins` directory or write inside it.
 
-TaskLinker does not change the database and does not require Composer or npm on
-the Kanboard server.
+TaskLinker uses Kanboard's existing database tables and does not add or alter
+the database schema. Upgrades can normalise legacy TaskLinker external links
+to Kanboard Web Links and record migration progress in the existing
+configuration table. It does not require Composer or npm on the Kanboard
+server.
 
 ## Install from a downloaded archive
 
@@ -45,5 +48,5 @@ do not leave a production server following an unreviewed development branch.
    and one configured Nextcloud link.
 5. If validation fails, restore the previous plugin directory from the backup.
 
-TaskLinker stores its settings in Kanboard's existing configuration table, so
-the normal Kanboard database backup protects them.
+TaskLinker stores its settings and external links in Kanboard's existing
+tables, so the normal Kanboard database backup protects them.

@@ -9,7 +9,7 @@ use Kanboard\Plugin\TaskLinker\ExternalLink\NextcloudLinkProvider;
 
 $plugin = $loadedPlugins['TaskLinker'];
 
-taskLinkerAssertSame('1.1.2', $plugin->getPluginVersion(), 'The uninstall-safe provider fix must expose version 1.1.2.');
+taskLinkerAssertSame('1.1.3', $plugin->getPluginVersion(), 'The rollback-safe migration release must expose version 1.1.3.');
 taskLinkerAssertSame(
     '>=1.2.54',
     $plugin->getCompatibleVersion(),
