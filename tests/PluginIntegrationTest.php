@@ -73,7 +73,10 @@ $legacyLinkId = $container['db']->table('task_has_external_links')->persist(arra
     'creator_id' => 0,
 ));
 taskLinkerAssertTrue($legacyLinkId !== false, 'The legacy external-link fixture must be created.');
-$container['configModel']->remove(Plugin::EXTERNAL_LINK_STORAGE_KEY);
+$container['configModel']->save(array(
+    Plugin::EXTERNAL_LINK_STORAGE_KEY => 'weblink-v1',
+));
+$container['configModel']->remove(Plugin::EXTERNAL_LINK_CURSOR_KEY);
 $container['memoryCache']->flush();
 $plugin->initialize();
 $migratedLink = $container['db']->table('task_has_external_links')->eq('id', $legacyLinkId)->findOne();
@@ -86,6 +89,48 @@ taskLinkerAssertSame(
     'https://cloud.example.test/nextcloud/index.php/s/preserved-link',
     $migratedLink['url'],
     'The compatibility migration must preserve stored external-link data.'
+);
+$container['memoryCache']->flush();
+taskLinkerAssertSame(
+    Plugin::EXTERNAL_LINK_STORAGE_VERSION,
+    $container['configModel']->get(Plugin::EXTERNAL_LINK_STORAGE_KEY),
+    'The compatibility migration must record its storage version.'
+);
+taskLinkerAssertSame(
+    (int) $legacyLinkId,
+    (int) $container['configModel']->get(Plugin::EXTERNAL_LINK_CURSOR_KEY),
+    'The compatibility migration must record the latest checked external-link ID.'
+);
+
+$rollbackLinkId = $container['db']->table('task_has_external_links')->persist(array(
+    'link_type' => NextcloudLinkProvider::LEGACY_TYPE,
+    'dependency' => 'related',
+    'title' => 'Rollback-created Nextcloud item',
+    'url' => 'https://cloud.example.test/nextcloud/index.php/s/rollback-link',
+    'date_creation' => time(),
+    'date_modification' => time(),
+    'task_id' => $migrationTaskId,
+    'creator_id' => 0,
+));
+taskLinkerAssertTrue($rollbackLinkId !== false, 'The rollback-created external-link fixture must be created.');
+$container['memoryCache']->flush();
+$plugin->initialize();
+$migratedRollbackLink = $container['db']->table('task_has_external_links')->eq('id', $rollbackLinkId)->findOne();
+taskLinkerAssertSame(
+    NextcloudLinkProvider::TYPE,
+    $migratedRollbackLink['link_type'],
+    'A re-upgrade must migrate legacy links created after the earlier migration.'
+);
+taskLinkerAssertSame(
+    'Rollback-created Nextcloud item',
+    $migratedRollbackLink['title'],
+    'The re-upgrade migration must preserve rollback-created external-link data.'
+);
+$container['memoryCache']->flush();
+taskLinkerAssertSame(
+    (int) $rollbackLinkId,
+    (int) $container['configModel']->get(Plugin::EXTERNAL_LINK_CURSOR_KEY),
+    'The re-upgrade migration must advance the latest checked external-link ID.'
 );
 
 taskLinkerAssertTrue(isset($container['taskGraphModel']), 'The bounded task graph model must be registered.');

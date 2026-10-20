@@ -23,7 +23,8 @@ class Plugin extends Base
     public const GRAPH_MAX_NODES_MAX = 250;
     public const NEXTCLOUD_ORIGINS_KEY = 'task_linker_nextcloud_origins';
     public const EXTERNAL_LINK_STORAGE_KEY = 'task_linker_external_link_storage';
-    public const EXTERNAL_LINK_STORAGE_VERSION = 'weblink-v1';
+    public const EXTERNAL_LINK_STORAGE_VERSION = 'weblink-v2';
+    public const EXTERNAL_LINK_CURSOR_KEY = 'task_linker_external_link_cursor';
 
     public function initialize()
     {
@@ -48,18 +49,7 @@ class Plugin extends Base
         $this->template->hook->attach('template:task:sidebar:information', 'taskLinker:task/sidebar');
         $this->template->hook->attach('template:config:sidebar', 'taskLinker:config/sidebar');
 
-        // Upgrade legacy provider rows once so preserved links stay usable after uninstall.
-        if ($this->configModel->get(
-            self::EXTERNAL_LINK_STORAGE_KEY,
-            ''
-        ) !== self::EXTERNAL_LINK_STORAGE_VERSION) {
-            $this->db->table('task_has_external_links')
-                ->eq('link_type', NextcloudLinkProvider::LEGACY_TYPE)
-                ->update(array('link_type' => NextcloudLinkProvider::TYPE));
-            $this->configModel->save(array(
-                self::EXTERNAL_LINK_STORAGE_KEY => self::EXTERNAL_LINK_STORAGE_VERSION,
-            ));
-        }
+        $this->migrateLegacyExternalLinks();
 
         // Invalid stored values must not prevent Kanboard from loading the plugin.
         try {
@@ -94,6 +84,52 @@ class Plugin extends Base
                 'TaskGraphModel',
             ),
         );
+    }
+
+    /**
+     * Migrate legacy provider rows without rescanning previously checked links.
+     *
+     * A high-water cursor allows re-upgrades to repair links created after a
+     * rollback while keeping normal plugin initialization bounded.
+     */
+    private function migrateLegacyExternalLinks()
+    {
+        $latestLinkId = (int) $this->db->table('task_has_external_links')
+            ->desc('id')
+            ->findOneColumn('id');
+        $storageVersion = (string) $this->configModel->get(self::EXTERNAL_LINK_STORAGE_KEY, '');
+        $cursor = $storageVersion === self::EXTERNAL_LINK_STORAGE_VERSION
+            ? max(0, (int) $this->configModel->get(self::EXTERNAL_LINK_CURSOR_KEY, 0))
+            : 0;
+
+        // Replay the migration when the database has been restored behind the saved cursor.
+        if ($latestLinkId < $cursor) {
+            $cursor = 0;
+        }
+
+        if ($latestLinkId > $cursor) {
+            $updated = $this->db->table('task_has_external_links')
+                ->eq('link_type', NextcloudLinkProvider::LEGACY_TYPE)
+                ->gt('id', $cursor)
+                ->lte('id', $latestLinkId)
+                ->update(array('link_type' => NextcloudLinkProvider::TYPE));
+
+            if (! $updated) {
+                $this->logger->error('TaskLinker could not migrate legacy external links.');
+                return;
+            }
+        }
+
+        if ($storageVersion !== self::EXTERNAL_LINK_STORAGE_VERSION || $latestLinkId !== $cursor) {
+            $saved = $this->configModel->save(array(
+                self::EXTERNAL_LINK_STORAGE_KEY => self::EXTERNAL_LINK_STORAGE_VERSION,
+                self::EXTERNAL_LINK_CURSOR_KEY => $latestLinkId,
+            ));
+
+            if (! $saved) {
+                $this->logger->error('TaskLinker could not save its external-link migration cursor.');
+            }
+        }
     }
 
     /**
